@@ -11,6 +11,7 @@ set(GTEST_INC_PATH /Users/iainhemstock/GitHub/googletest/googletest/include)
 set(GTEST_LIB_PATH /Users/iainhemstock/Github/googletest/build/googlemock/gtest)
 
 include_directories(
+        inc
         ${GMOCK_INC_PATH}
         ${GTEST_INC_PATH}
 )
