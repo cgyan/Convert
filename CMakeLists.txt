@@ -25,7 +25,10 @@ find_library(GTEST_LIB
         PATHS ${GTEST_LIB_PATH}
 )
 
-add_executable(${CMAKE_PROJECT_NAME} main.cpp)
+add_executable(${CMAKE_PROJECT_NAME}
+        main.cpp
+        tests/tests.cpp
+)
 
 target_link_libraries(${CMAKE_PROJECT_NAME}
         ${GMOCK_LIB}
