@@ -65,18 +65,18 @@ TEST(ApplicationTests, ShouldReturnZeroWhenValueArgIsZero)
         EXPECT_THAT(cut.value(), Eq(0.0));
 }
 
-TEST(ApplicationTests, ShouldReturnNullPointerWhenFirstTypeIsNotRecognized)
+TEST(ApplicationTests, ShouldReturnStringOfFirstType)
 {
-        const char * argv[] = { "", "", "invalid_type", "to", "" };
+        const char * argv[] = { "", "", "meter", "to", "" };
         const int argc = 5;
         Application cut(argc, argv);
-        EXPECT_THAT(cut.converter(), Eq(nullptr));
+        EXPECT_THAT(cut.firstType(), Eq("meter"));
 }
 
-TEST(ApplicationTests, ShouldReturnNullPointerWhenSecondTypeIsNotRecognized)
+TEST(ApplicationTests, ShouldReturnStringOfSecondType)
 {
-        const char * argv[] = { "", "", "", "to", "invalid_type" };
+        const char * argv[] = { "", "", "", "to", "miles" };
         const int argc = 5;
         Application cut(argc, argv);
-        EXPECT_THAT(cut.converter(), Eq(nullptr));
+        EXPECT_THAT(cut.secondType(), Eq("miles"));
 }
